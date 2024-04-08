@@ -11,6 +11,9 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api', routes);
+app.get((req,res)=>{
+  res.send("hellow")
+})
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
