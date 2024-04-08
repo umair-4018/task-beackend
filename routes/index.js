@@ -4,8 +4,6 @@ import verifyTokens from "../middleware/index.js";
 import { createBook, deleteBook, genre, getAllBooksByUserId, getAllGenres, updateBook } from "../controller/bookController/BookController.js";
 import { deleteUserAndBooks } from "../controller/authController/AuthController.js";
 
-
-
 const router = express.Router();
 router.use("/auth",authRoute)
 router

@@ -72,10 +72,10 @@ export const authRegister = async (req, res) => {
         return res.status(400).json({ message: "User details are missing or invalid" });
       }
   
-      // Delete all books associated with the user
+    
       await Book.deleteMany({ uid: req.details.id });
   
-      // Delete the user
+   
       await User.findByIdAndDelete(req.details.id);
   
       return res.status(200).json({ message: "User and associated books deleted successfully" });

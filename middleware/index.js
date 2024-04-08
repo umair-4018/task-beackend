@@ -8,8 +8,6 @@ function verifyTokens(req, res, next) {
   if (!token) {
     return res.status(403).send({ auth: false, message: 'No token provided.' });
   }
-
-  // Remove the "Bearer " prefix
   const tokenParts = token.split(' ');
   if (tokenParts.length !== 2 || tokenParts[0] !== 'Bearer') {
     return res.status(401).send({ auth: false, message: 'Invalid token format.' });
